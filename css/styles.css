@@ -1,0 +1,286 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html:focus-within{
+    scroll-behavior: smooth;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+button,
+textarea{
+    font: inherit;
+}
+
+:root{
+    --fontf: 'Inter', sans-serif;
+    --fonts-500: 2rem;
+    --fonts-400: 1.5rem;
+    --fonts-300: 1rem;
+    --fonts-200: .75rem;
+
+    --bgap: 2.5vmax;
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: var(--bgap);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+body{
+    font-family: var(--fontf);
+    line-height: 1.5;
+    font-size: var(--fonts-300);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: calc(0.5 * var(--bgap));
+    width: 90rem;
+    max-width: 95%;
+    min-height: 10vh;
+    margin-inline: auto;
+    border-radius: .75em;
+    padding: var(--bgap);
+    box-shadow: .5rem .5rem 1rem #fff,
+        -.5rem -.5rem 1rem #ccc;
+}
+
+.Diamante{
+    visibility: hidden;
+    display: none;
+}
+
+.sec-left,
+.sec-right{
+    padding: 2rem;
+}
+
+/* Estilos lado derecho */
+
+.sec-right{
+    flex-basis: 30%;
+    display: flex;
+    min-height: 300px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2rem;
+    box-shadow: .5rem .5rem 1rem rgb(31, 23, 23),
+         -.5rem -.5rem 1rem #ccc;
+    overflow: hidden;
+}
+
+.sec-right > * + *{
+    margin-top: .75em;
+}
+
+.sec-right.process{
+    justify-content: space-between;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.sec-right.process .btn-copiar{
+    display: inline-block;
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(213, 84%, 24%);
+
+}
+
+.btn-copiar{
+    display: none;
+}
+
+.output{
+    font-size: var(--fonts-400);
+}
+
+/* Estilos lado izquierdo */
+
+.sec-left{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 65%;
+    height: 40rem;
+    border-radius: 2rem;
+}
+
+.Logo{
+    display: flex;
+    height: 30px;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.Logo img{
+    margin-right: 30px;
+}
+
+.input-wra{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+.to-enc{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 0;
+    border-radius: .5rem;
+    min-height: 400px;
+    display: block;
+    resize: none;
+    background-color: transparent;
+}
+
+.to-enc::-webkit-scrollbar{
+    width: 7.5px;
+}
+
+.to-enc::-webkit-scrollbar-track,
+.to-enc::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+}
+
+to-enc::-webkit-scrollbar-track{
+    background-color: hsl(223, 19%, 59%);
+}
+
+.to-enc::-webkit-scrollbar-thumb{
+    --opacity: 1;
+    background-color: hsla(213 84% 24% / var(--opacity));
+}
+
+.to-enc::-webkit-scrollbar-thumb:hover{
+    --opacity: 0.5;
+}
+
+.to-enc::placeholder,
+.to-enc{
+    font-size: var(--fonts-500);
+}
+
+.btns-wra{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.btns-wra > *:first-child,
+.btns-wra > *:last-child{
+    width: 100%;
+}
+
+.btn{
+    width: 20.5rem;
+    padding-block: 1.5em;
+    border: 2px solid hsl(213, 84%, 24%);
+    border-radius: 1.5em;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+
+.btn:hover{
+    box-shadow: .5rem .5rem 1rem #fff,
+        -.5rem -.5rem 1rem #ccc;
+}
+
+.btn:active{
+    box-shadow: inset 2rem 2rem 1rem #fff,
+        inset 2rem 2rem 1rem #ccc;
+}
+
+.btn-enc{
+    width: 100%;
+    background-color: hsl(213, 84%, 24%);
+    color: hsl(0, 0%, 100%);
+    transition: all 1s ease;
+    box-shadow: .5rem .5rem 1rem hsl(213, 84%, 24%),
+        -.5rem -.5rem 1rem hsl(213, 84%, 24%);
+}
+
+.btn-dec{
+    background-color: hsl(214, 26%, 88%);
+    color: hsl(213, 84%, 24%);
+    box-shadow: .5rem .5rem 1rem hsl(213, 84%, 24%),
+        -.5rem -.5rem 1rem hsl(213, 84%, 24%);
+}
+
+.btn-copiar{
+    box-shadow: .5rem .5rem 1rem hsl(213, 84%, 24%),
+        -.5rem -.5rem 1rem hsl(213, 84%, 24%);
+}
+
+.info{
+    padding-bottom: 1em;
+    font-size: var(--fonts-200);
+}
+
+.info::before{
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+    margin-right: .5rem;
+    margin-bottom: -2px;
+    background-image: url(/img/muneco.png);
+}
+
+@media screen and (min-width: 40em) {
+    .btns-wra{
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .btns-wra > *:first-child,
+    .btns-wra > *:last-child{
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (min-width: 80em){
+    main{
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: calc(2 * var(--bgap));
+    }
+
+    .sec-left{
+        display: flex;
+        flex-direction: column;
+        flex-basis: 70%;
+        height: auto;
+    }
+
+    .Diamante{
+        visibility: visible;
+        display: block;
+    }
+
+    .input-wra{
+        flex-basis: 100%;
+    }
+    
+}
